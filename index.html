@@ -22,6 +22,7 @@
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#blog">Blog</a>
+          <a href="#inspiration">Inspiration</a>
           <a href="#contact">Contact</a>
           <a
             class="icon-link"
@@ -53,8 +54,8 @@
             Fueling the future of fabrication through a dual-lens approach:
             applying the discipline of biomedical research to the limitless
             possibilities of the workshop. I live to build, learn, and
-            share—transforming complex engineering concepts into tangible, DIY
-            realities.
+            share—taking limitless concepts and ideas and transforming them into
+            complex engineering concepts.
           </p>
           <div class="cta-row">
             <button class="btn primary" type="button" id="open-talk-modal">
@@ -68,35 +69,23 @@
       </section>
 
       <section id="work" class="section work">
-        <div class="section-head">
-          <h2>Selected work</h2>
-          <p>
-            A curated selection of brand and product design engagements focused on
-            clarity, function, and feel.
-          </p>
-        </div>
         <div class="work-grid">
-          <article class="work-card">
-            <div class="work-image gradient-one"></div>
-            <div>
-              <h3>Atlas Cloud</h3>
-              <p>Enterprise data platform redesign & product system.</p>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-image gradient-two"></div>
-            <div>
-              <h3>Arcadia Studio</h3>
-              <p>Brand identity, editorial web experience, and launch assets.</p>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-image gradient-three"></div>
-            <div>
-              <h3>Northwind</h3>
-              <p>Mobile-first commerce experience for emerging markets.</p>
-            </div>
-          </article>
+          <div class="work-tile"></div>
+          <div class="work-tile wide"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile tall"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile wide"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile"></div>
+          <div class="work-tile tall"></div>
+          <div class="work-tile"></div>
         </div>
       </section>
 
@@ -173,6 +162,16 @@
         </div>
       </section>
 
+      <section id="inspiration" class="section inspiration">
+        <div class="section-head">
+          <h2>Inspiration</h2>
+          <p>
+            A living archive of materials, mechanisms, and references that
+            influence each build.
+          </p>
+        </div>
+      </section>
+
       <section id="contact" class="section contact">
         <div class="section-head">
           <h2>Let’s work together</h2>
@@ -198,6 +197,8 @@
         </form>
       </section>
     </main>
+
+    <div class="overlay" id="nav-overlay" aria-hidden="true"></div>
 
     <div class="modal" id="talk-modal" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="talk-title">
@@ -243,6 +244,8 @@
       const openButton = document.getElementById("open-talk-modal");
       const closeButton = document.getElementById("close-talk-modal");
       const form = document.getElementById("talk-form");
+      const navOverlay = document.getElementById("nav-overlay");
+      const navLinks = document.querySelectorAll(".nav-links a");
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -276,6 +279,17 @@
 
         window.location.href = `mailto:samfrenchofficial@gmail.com?subject=${mailSubject}&body=${body}`;
         closeModal();
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navOverlay.classList.add("is-active");
+          navOverlay.setAttribute("aria-hidden", "false");
+          setTimeout(() => {
+            navOverlay.classList.remove("is-active");
+            navOverlay.setAttribute("aria-hidden", "true");
+          }, 500);
+        });
       });
     </script>
   </body>
