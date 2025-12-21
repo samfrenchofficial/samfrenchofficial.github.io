@@ -267,6 +267,38 @@ main {
   font-size: 0.95rem;
 }
 
+.about-story {
+  display: grid;
+  gap: 48px;
+}
+
+.about-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+
+.about-row.reverse .about-text {
+  order: 2;
+}
+
+.about-row.reverse .about-image {
+  order: 1;
+}
+
+.about-text p {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
 .about {
   display: grid;
   gap: 32px;
@@ -398,5 +430,14 @@ textarea {
 
   .hero {
     padding-top: 64px;
+  }
+
+  .about-row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-row.reverse .about-text,
+  .about-row.reverse .about-image {
+    order: initial;
   }
 }
