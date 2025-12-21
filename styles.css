@@ -185,11 +185,11 @@ main {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: 16px;
   aspect-ratio: 1 / 1;
-  width: min(100%, 960px);
+  width: min(100%, 720px);
   margin: 0 auto;
   grid-auto-flow: dense;
 }
@@ -208,38 +208,10 @@ main {
   background: linear-gradient(135deg, #eee2d7, #faf6f2);
 }
 
-.work-tile.wide {
-  grid-column: span 2;
-}
-
-.work-tile.tall {
-  grid-row: span 2;
-}
-
-.full-bleed {
-  max-width: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.cork-section {
+.footer-section {
   position: relative;
   padding-top: 72px;
   padding-bottom: 72px;
-  min-height: 520px;
-  background: url("Cork.png") center/cover no-repeat;
-}
-
-.cork-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 
 .back-to-top {
@@ -262,22 +234,6 @@ main {
   font-size: 1.1rem;
 }
 
-.cork-footer {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 1100px;
-  width: calc(100% - 48px);
-  color: #ffffff;
-  z-index: 2;
-  align-items: center;
-}
-
-.cork-footer .footer-links {
-  align-items: center;
-}
-
 .footer-icon-button {
   border: none;
   background: transparent;
@@ -291,12 +247,10 @@ main {
   display: block;
 }
 
-.cork-footer .icon-link img {
-  filter: brightness(0) invert(1);
-}
-
-.cork-footer .footer-icon-button img {
-  filter: brightness(0) invert(1);
+.footer-quote {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .about {
