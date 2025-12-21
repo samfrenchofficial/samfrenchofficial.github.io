@@ -38,11 +38,12 @@ a {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.85);
   z-index: 2;
+  width: 100%;
 }
 
 .nav {
@@ -83,6 +84,7 @@ a {
 main {
   position: relative;
   z-index: 1;
+  padding-top: 88px;
 }
 
 .hero {
@@ -197,15 +199,27 @@ main {
 .work-tile {
   border-radius: 18px;
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, #eae7e2, #f7f7f7);
+  background: #e6e6e6;
 }
 
 .work-tile:nth-child(3n) {
-  background: linear-gradient(135deg, #e3e7ef, #f6f8fb);
+  background: #d8d8d8;
 }
 
 .work-tile:nth-child(4n) {
-  background: linear-gradient(135deg, #eee2d7, #faf6f2);
+  background: #cfcfcf;
+}
+
+.work-tile:nth-child(5n) {
+  background: #bfbfbf;
+}
+
+.work-tile:nth-child(7n) {
+  background: #efefef;
+}
+
+.work-tile:nth-child(9n) {
+  background: #dadada;
 }
 
 .footer-section {
