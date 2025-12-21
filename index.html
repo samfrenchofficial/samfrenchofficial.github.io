@@ -23,11 +23,21 @@
           <a href="#about">About</a>
           <a href="#blog">Blog</a>
           <a href="#contact">Contact</a>
-          <a href="http://linkedin.com/in/samfrench1998" target="_blank" rel="noreferrer">
-            LinkedIn
+          <a
+            class="icon-link"
+            href="http://linkedin.com/in/samfrench1998"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="LinkedIn.png" alt="LinkedIn" />
           </a>
-          <a href="https://www.youtube.com/@MyEyeDesign2025" target="_blank" rel="noreferrer">
-            YouTube
+          <a
+            class="icon-link"
+            href="https://www.youtube.com/@MyEyeDesign2025"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
           </a>
         </div>
       </nav>
@@ -36,18 +46,20 @@
     <main>
       <section class="hero">
         <div class="hero-text">
-          <p class="eyebrow">Product & Digital Design Studio</p>
           <h1>
-            Minimal interfaces and thoughtful brand systems for teams building the
-            future.
+            Professional precision. Maker mindset.
           </h1>
           <p class="lead">
-            I partner with founders and creative teams to shape memorable digital
-            products, identities, and websites that feel quietly confident.
+            Fueling the future of fabrication through a dual-lens approach:
+            applying the discipline of biomedical research to the limitless
+            possibilities of the workshop. I live to build, learn, and
+            share—transforming complex engineering concepts into tangible, DIY
+            realities.
           </p>
           <div class="cta-row">
-            <a class="btn primary" href="#contact">Start a project</a>
-            <a class="btn ghost" href="#work">View selected work</a>
+            <button class="btn primary" type="button" id="open-talk-modal">
+              Lets Talk
+            </button>
           </div>
         </div>
         <div class="hero-panel">
@@ -204,6 +216,36 @@
       </section>
     </main>
 
+    <div class="modal" id="talk-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="talk-title">
+        <div class="modal-header">
+          <h2 id="talk-title">Let’s Talk</h2>
+          <button class="modal-close" type="button" id="close-talk-modal">✕</button>
+        </div>
+        <form class="modal-form" id="talk-form">
+          <label for="talk-name">Name</label>
+          <input id="talk-name" name="name" type="text" placeholder="Your name" required />
+
+          <label for="talk-email">Email</label>
+          <input id="talk-email" name="email" type="email" placeholder="you@email.com" required />
+
+          <label for="talk-subject">Subject</label>
+          <input id="talk-subject" name="subject" type="text" placeholder="Project subject" required />
+
+          <label for="talk-description">Description</label>
+          <textarea
+            id="talk-description"
+            name="description"
+            rows="4"
+            placeholder="Tell me about your project"
+            required
+          ></textarea>
+
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
     <footer class="site-footer">
       <p>© 2024 Studio Sam. Crafted with intention.</p>
       <div class="footer-links">
@@ -212,5 +254,46 @@
         <a href="#">LinkedIn</a>
       </div>
     </footer>
+
+    <script>
+      const modal = document.getElementById("talk-modal");
+      const openButton = document.getElementById("open-talk-modal");
+      const closeButton = document.getElementById("close-talk-modal");
+      const form = document.getElementById("talk-form");
+
+      const openModal = () => {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      };
+
+      const closeModal = () => {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      };
+
+      openButton.addEventListener("click", openModal);
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("talk-name").value.trim();
+        const email = document.getElementById("talk-email").value.trim();
+        const subject = document.getElementById("talk-subject").value.trim();
+        const description = document.getElementById("talk-description").value.trim();
+
+        const mailSubject = encodeURIComponent(subject);
+        const body = encodeURIComponent(
+          `Name: ${name}\\nEmail: ${email}\\n\\nDescription:\\n${description}`
+        );
+
+        window.location.href = `mailto:samfrenchofficial@gmail.com?subject=${mailSubject}&body=${body}`;
+        closeModal();
+      });
+    </script>
   </body>
 </html>
