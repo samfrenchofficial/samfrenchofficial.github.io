@@ -23,7 +23,7 @@
           <a href="about.html">About</a>
           <a href="blog.html">Blog</a>
           <a href="inspiration.html">Inspiration</a>
-          <a href="#contact">Contact</a>
+          <a class="contact-link" href="#contact">Contact</a>
           <a
             class="icon-link"
             href="http://linkedin.com/in/samfrench1998"
@@ -155,6 +155,7 @@
       const navOverlay = document.getElementById("nav-overlay");
       const navLinks = document.querySelectorAll(".nav-links a");
       const footerButton = document.getElementById("open-talk-modal-footer");
+      const contactLinks = document.querySelectorAll(".contact-link");
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -169,6 +170,12 @@
       openButton.addEventListener("click", openModal);
       footerButton.addEventListener("click", openModal);
       closeButton.addEventListener("click", closeModal);
+      contactLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          openModal();
+        });
+      });
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {
           closeModal();
