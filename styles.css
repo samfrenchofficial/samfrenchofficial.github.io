@@ -293,10 +293,17 @@ main {
 }
 
 .about-image img {
-  width: 100%;
+  width: 75%;
   border-radius: 24px;
   border: 1px solid var(--border);
   display: block;
+  margin: 0 auto;
+}
+
+.about-divider {
+  width: 100%;
+  height: 1px;
+  background: #dcdcdc;
 }
 
 .about {
