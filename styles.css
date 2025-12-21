@@ -188,7 +188,8 @@ main {
   grid-template-rows: repeat(4, minmax(0, 1fr));
   gap: 16px;
   aspect-ratio: 1 / 1;
-  width: 100%;
+  width: min(100%, 960px);
+  margin: 0 auto;
 }
 
 .work-tile {
@@ -260,6 +261,43 @@ main {
 .cork-image {
   width: 100%;
   display: block;
+}
+
+.cork-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1100px;
+  width: calc(100% - 48px);
+  color: #ffffff;
+  z-index: 2;
+  align-items: center;
+}
+
+.cork-footer .footer-links {
+  align-items: center;
+}
+
+.footer-icon-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footer-icon-button img {
+  height: 28px;
+  width: 28px;
+  display: block;
+}
+
+.cork-footer .icon-link img {
+  filter: brightness(0) invert(1);
+}
+
+.cork-footer .footer-icon-button img {
+  filter: brightness(0) invert(1);
 }
 
 .about {

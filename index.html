@@ -94,82 +94,32 @@
           <a href="#top" aria-label="Back to top">↑</a>
         </div>
         <img class="cork-image" src="Cork.png" alt="Cork texture" />
-      </section>
-
-      <section id="about" class="section about">
-        <div class="about-content">
-          <h2>About</h2>
-          <p>
-            Studio Sam is a boutique design practice led by Sam French, helping
-            teams translate complex ideas into simple, elevated experiences. With
-            a collaborative approach and a focus on craft, each project is shaped
-            to feel timeless and approachable.
-          </p>
-        </div>
-        <div class="about-highlight">
-          <p>
-            “Sam's attention to detail and ability to guide the narrative helped
-            us launch with confidence.”
-          </p>
-          <span>— Product Lead, Arcadia Studio</span>
-        </div>
-      </section>
-
-      <section id="blog" class="section blog">
-        <div class="section-head">
-          <h2>Blog</h2>
-          <p>Notes on product design, creative direction, and studio life.</p>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <div>
-              <h3>Designing calm product journeys</h3>
-              <p>Building structure and breathing room into complex flows.</p>
-            </div>
-          </article>
-          <article class="work-card">
-            <div>
-              <h3>Brand systems that scale</h3>
-              <p>Guidelines for consistent, evolving product identities.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="inspiration" class="section inspiration">
-        <div class="section-head">
-          <h2>Inspiration</h2>
-          <p>
-            A living archive of materials, mechanisms, and references that
-            influence each build.
-          </p>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact">
-        <div class="section-head">
-          <h2>Let’s work together</h2>
-          <p>
-            Share your goals and timeline, and I’ll respond within two business
-            days.
-          </p>
-        </div>
-        <form class="contact-form">
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" />
+        <footer class="site-footer cork-footer">
+          <p>© 2024 Studio Sam. Crafted with intention.</p>
+          <div class="footer-links">
+            <button class="footer-icon-button" type="button" id="open-talk-modal-footer">
+              <img src="mail.png" alt="Email" />
+            </button>
+            <a
+              class="icon-link"
+              href="https://www.youtube.com/@MyEyeDesign2025"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="Youtube.png" alt="YouTube" />
+            </a>
+            <a
+              class="icon-link"
+              href="http://linkedin.com/in/samfrench1998"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="LinkedIn.png" alt="LinkedIn" />
+            </a>
           </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@email.com" />
-          </div>
-          <div class="field">
-            <label for="message">Project details</label>
-            <textarea id="message" rows="4" placeholder="Tell me about the project"></textarea>
-          </div>
-          <button class="btn primary" type="submit">Send inquiry</button>
-        </form>
+        </footer>
       </section>
+
     </main>
 
     <div class="overlay" id="nav-overlay" aria-hidden="true"></div>
@@ -204,15 +154,6 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-      <p>© 2024 Studio Sam. Crafted with intention.</p>
-      <div class="footer-links">
-        <a href="mailto:hello@studiosam.com">hello@studiosam.com</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-      </div>
-    </footer>
-
     <script>
       const modal = document.getElementById("talk-modal");
       const openButton = document.getElementById("open-talk-modal");
@@ -220,6 +161,7 @@
       const form = document.getElementById("talk-form");
       const navOverlay = document.getElementById("nav-overlay");
       const navLinks = document.querySelectorAll(".nav-links a");
+      const footerButton = document.getElementById("open-talk-modal-footer");
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -232,6 +174,7 @@
       };
 
       openButton.addEventListener("click", openModal);
+      footerButton.addEventListener("click", openModal);
       closeButton.addEventListener("click", closeModal);
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {
