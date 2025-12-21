@@ -19,6 +19,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   letter-spacing: -0.01em;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -190,6 +191,7 @@ main {
   aspect-ratio: 1 / 1;
   width: min(100%, 960px);
   margin: 0 auto;
+  grid-auto-flow: dense;
 }
 
 .work-tile {
@@ -224,6 +226,8 @@ main {
   position: relative;
   padding-top: 72px;
   padding-bottom: 72px;
+  min-height: 520px;
+  background: url("Cork.png") center/cover no-repeat;
 }
 
 .cork-section::before {
@@ -256,11 +260,6 @@ main {
   background: #111111;
   color: #ffffff;
   font-size: 1.1rem;
-}
-
-.cork-image {
-  width: 100%;
-  display: block;
 }
 
 .cork-footer {
