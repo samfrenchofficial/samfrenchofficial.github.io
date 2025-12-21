@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Studio Sam — Product & Digital Design</title>
+    <title>About — Sam French</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,7 @@
     <div class="grain"></div>
     <header class="site-header">
       <nav class="nav">
-        <a class="logo" href="#">
+        <a class="logo" href="index.html">
           <img src="signature.png" alt="Sam French signature" />
         </a>
         <div class="nav-links">
@@ -45,30 +45,14 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-text">
-          <h1>
-            Professional precision. Maker mindset.
-          </h1>
-          <p class="lead">
-            Fueling the future of fabrication through a dual-lens approach:
-            applying the discipline of biomedical research to the limitless
-            possibilities of the workshop. I live to build, learn, and
-            share—taking limitless concepts and ideas and transforming them into
-            complex engineering concepts.
-          </p>
-          <div class="cta-row">
-            <button class="btn primary" type="button" id="open-talk-modal">
-              Lets Talk
-            </button>
-          </div>
-        </div>
-        <div class="hero-panel">
-          <img class="hero-portrait" src="portrait.png" alt="Portrait" />
+      <section class="section">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>Notes on background, focus areas, and current studio priorities.</p>
         </div>
       </section>
 
-      <section id="work" class="section work">
+      <section class="section work">
         <div class="work-grid">
           <div class="work-tile"></div>
           <div class="work-tile"></div>
@@ -112,7 +96,6 @@
           </div>
         </footer>
       </section>
-
     </main>
 
     <div class="overlay" id="nav-overlay" aria-hidden="true"></div>
@@ -149,7 +132,6 @@
 
     <script>
       const modal = document.getElementById("talk-modal");
-      const openButton = document.getElementById("open-talk-modal");
       const closeButton = document.getElementById("close-talk-modal");
       const form = document.getElementById("talk-form");
       const navOverlay = document.getElementById("nav-overlay");
@@ -166,7 +148,6 @@
         modal.setAttribute("aria-hidden", "true");
       };
 
-      openButton.addEventListener("click", openModal);
       footerButton.addEventListener("click", openModal);
       closeButton.addEventListener("click", closeModal);
       modal.addEventListener("click", (event) => {
@@ -184,7 +165,7 @@
 
         const mailSubject = encodeURIComponent(subject);
         const body = encodeURIComponent(
-          `Name: ${name}\\nEmail: ${email}\\n\\nDescription:\\n${description}`
+          `Name: ${name}\nEmail: ${email}\n\nDescription:\n${description}`
         );
 
         window.location.href = `mailto:samfrenchofficial@gmail.com?subject=${mailSubject}&body=${body}`;
