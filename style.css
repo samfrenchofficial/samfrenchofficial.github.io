@@ -64,18 +64,21 @@ nav a {
 
 .project-item {
     position: relative;
-    aspect-ratio: 1 / 1; /* Perfect squares */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    background-color: #eee; /* This is the grey you might be seeing */
+    background-color: #ffffff; /* Change this to match your image backgrounds */
 }
 
 .project-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block; /* Ensures no weird spacing */
+    /* Shows the whole image without cropping */
+    object-fit: contain; 
+    /* Adds a little padding so the image doesn't touch the edges */
+    padding: 20px; 
+    display: block;
     position: relative;
-    z-index: 1; /* Keeps image behind the overlay */
+    z-index: 1;
 }
 
 /* The Black Overlay */
