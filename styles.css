@@ -222,6 +222,73 @@ main {
   background: #dadada;
 }
 
+.inspiration-card {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 0;
+  overflow: hidden;
+  background: #e4e4e4;
+  cursor: pointer;
+}
+
+.inspiration-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.inspiration-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.inspiration-card:hover .inspiration-label,
+.inspiration-card:focus-visible .inspiration-label {
+  opacity: 1;
+}
+
+.inspiration-card:hover img,
+.inspiration-card:focus-visible img {
+  transform: scale(1.03);
+}
+
+.inspiration-modal-content {
+  width: min(720px, 100%);
+}
+
+.inspiration-modal-body {
+  display: grid;
+  gap: 16px;
+}
+
+.inspiration-modal-body img {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.icon-button {
+  gap: 10px;
+}
+
+.icon-button img {
+  height: 20px;
+  width: 20px;
+  filter: brightness(0) invert(1);
+}
+
 .footer-section {
   position: relative;
   padding-top: 72px;

@@ -54,7 +54,10 @@
 
       <section class="section work">
         <div class="work-grid">
-          <div class="work-tile"></div>
+          <button class="inspiration-card" type="button" id="open-inspiration-modal">
+            <img src="lkicon.png" alt="Laura Kampf" />
+            <span class="inspiration-label">Laura Kampf</span>
+          </button>
           <div class="work-tile"></div>
           <div class="work-tile"></div>
           <div class="work-tile"></div>
@@ -130,6 +133,54 @@
       </div>
     </div>
 
+    <div class="modal" id="inspiration-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inspiration-title"
+      >
+        <div class="modal-header">
+          <h2 id="inspiration-title">Laura Kampf</h2>
+          <button class="modal-close" type="button" id="close-inspiration-modal">✕</button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="lkbanner.png" alt="Laura Kampf banner" />
+          <p>
+            Laura Kampf is a German maker, engineer, and filmmaker best known for
+            her YouTube channel, where she designs and builds practical objects
+            with striking clarity and honesty. What makes her inspiring is not
+            just technical skill, but how she frames making: as a process of
+            curiosity, iteration, and learning in public. She openly shows
+            mistakes, redesigns, and constraints—budget, tools, time—without
+            polishing them away. That transparency quietly dismantles the myth
+            that creativity requires perfection or expensive equipment.
+          </p>
+          <p>
+            Laura blends engineering logic with playful experimentation, moving
+            fluidly between metalworking, woodworking, electronics, and design.
+            Her projects often solve everyday problems, grounding creativity in
+            usefulness rather than spectacle. She also challenges stereotypes in
+            engineering and fabrication by simply existing in the space,
+            confidently and without theatrics. The result is deeply motivating:
+            viewers come away feeling that building things is accessible, human,
+            and worth attempting. Laura Kampf inspires people not to admire
+            finished objects, but to trust their own hands, patience, and
+            curiosity—and start making.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/@laurakampf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
     <script>
       const modal = document.getElementById("talk-modal");
       const closeButton = document.getElementById("close-talk-modal");
@@ -137,6 +188,9 @@
       const navOverlay = document.getElementById("nav-overlay");
       const navLinks = document.querySelectorAll(".nav-links a");
       const footerButton = document.getElementById("open-talk-modal-footer");
+      const inspirationModal = document.getElementById("inspiration-modal");
+      const openInspirationButton = document.getElementById("open-inspiration-modal");
+      const closeInspirationButton = document.getElementById("close-inspiration-modal");
       const contactLinks = document.querySelectorAll(".contact-link");
 
       const openModal = () => {
@@ -151,6 +205,20 @@
 
       footerButton.addEventListener("click", openModal);
       closeButton.addEventListener("click", closeModal);
+      openInspirationButton.addEventListener("click", () => {
+        inspirationModal.classList.add("is-open");
+        inspirationModal.setAttribute("aria-hidden", "false");
+      });
+      closeInspirationButton.addEventListener("click", () => {
+        inspirationModal.classList.remove("is-open");
+        inspirationModal.setAttribute("aria-hidden", "true");
+      });
+      inspirationModal.addEventListener("click", (event) => {
+        if (event.target === inspirationModal) {
+          inspirationModal.classList.remove("is-open");
+          inspirationModal.setAttribute("aria-hidden", "true");
+        }
+      });
       contactLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
           event.preventDefault();
