@@ -290,6 +290,12 @@ main {
   filter: none;
 }
 
+.secondary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  width: min(100%, 1080px);
+}
+
 .footer-section {
   position: relative;
   padding-top: 72px;
