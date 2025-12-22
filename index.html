@@ -147,6 +147,27 @@
       </div>
     </div>
 
+    <div class="modal" id="password-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="password-title">
+        <div class="modal-header">
+          <h2 id="password-title">Security Check</h2>
+          <button class="modal-close" type="button" id="close-password-modal">✕</button>
+        </div>
+        <form class="modal-form" id="password-form">
+          <label for="password-input">Password</label>
+          <input
+            id="password-input"
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            required
+          />
+          <p class="password-error" id="password-error" aria-live="polite"></p>
+          <button class="btn primary" type="submit">Unlock</button>
+        </form>
+      </div>
+    </div>
+
     <script>
       const modal = document.getElementById("talk-modal");
       const openButton = document.getElementById("open-talk-modal");
@@ -156,6 +177,12 @@
       const navLinks = document.querySelectorAll(".nav-links a");
       const footerButton = document.getElementById("open-talk-modal-footer");
       const contactLinks = document.querySelectorAll(".contact-link");
+      const passwordModal = document.getElementById("password-modal");
+      const passwordForm = document.getElementById("password-form");
+      const passwordInput = document.getElementById("password-input");
+      const passwordError = document.getElementById("password-error");
+      const closePasswordButton = document.getElementById("close-password-modal");
+      let pendingTarget = "";
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -213,15 +240,46 @@
         });
       });
 
+      const openPasswordModal = (target) => {
+        pendingTarget = target;
+        passwordModal.classList.add("is-open");
+        passwordModal.setAttribute("aria-hidden", "false");
+        passwordError.textContent = "";
+        passwordForm.reset();
+        const content = passwordModal.querySelector(".modal-content");
+        if (content) {
+          content.scrollTop = 0;
+        }
+        passwordInput.focus();
+      };
+
+      const closePasswordModal = () => {
+        passwordModal.classList.remove("is-open");
+        passwordModal.setAttribute("aria-hidden", "true");
+        pendingTarget = "";
+      };
+
       document.querySelectorAll(".password-tile").forEach((tile) => {
         tile.addEventListener("click", () => {
-          const password = prompt("Enter password to continue:");
-          if (password === "Scheurmann") {
-            window.location.href = tile.dataset.target;
-          } else if (password !== null) {
-            alert("Incorrect password.");
-          }
+          openPasswordModal(tile.dataset.target);
         });
+      });
+
+      closePasswordButton.addEventListener("click", closePasswordModal);
+      passwordModal.addEventListener("click", (event) => {
+        if (event.target === passwordModal) {
+          closePasswordModal();
+        }
+      });
+
+      passwordForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (passwordInput.value === "Scheurmann") {
+          window.location.href = pendingTarget;
+        } else {
+          passwordError.textContent = "Incorrect password. Please try again.";
+          passwordInput.focus();
+        }
       });
 
       document.getElementById("year").textContent = new Date().getFullYear();

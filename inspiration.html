@@ -112,12 +112,12 @@
 
       <section class="section pinterest-section">
         <div class="pinterest-frame">
-          <iframe
-            title="Pinterest inspiration board"
-            src="https://pin.it/2av5TzlWG"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-          ></iframe>
+          <a
+            data-pin-do="embedBoard"
+            href="https://pin.it/2av5TzlWG"
+          >
+            View Pinterest board
+          </a>
         </div>
       </section>
 
@@ -818,5 +818,6 @@
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
   </body>
 </html>
