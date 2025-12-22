@@ -54,22 +54,42 @@
 
       <section class="section work">
         <div class="work-grid">
-          <button class="inspiration-card" type="button" id="open-marius-modal">
+          <button class="inspiration-card" type="button" data-inspiration-target="marius-modal">
             <img src="mhicon.png" alt="Marius Hornberger" />
             <span class="inspiration-label">Marius Hornberger</span>
           </button>
-          <button class="inspiration-card" type="button" id="open-laura-modal">
+          <button class="inspiration-card" type="button" data-inspiration-target="laura-modal">
             <img src="lkicon.png" alt="Laura Kampf" />
             <span class="inspiration-label">Laura Kampf</span>
           </button>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
+          <button class="inspiration-card" type="button" data-inspiration-target="fireball-modal">
+            <img src="fbicon.png" alt="Fireball Tool" />
+            <span class="inspiration-label">Fireball Tool</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="inheritance-modal">
+            <img src="imicon.png" alt="Inheritance Machining" />
+            <span class="inspiration-label">Inheritance Machining</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="stuffmadehere-modal">
+            <img src="smhicon.png" alt="Stuff Made Here" />
+            <span class="inspiration-label">Stuff Made Here</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="jimmy-modal">
+            <img src="jdicon.png" alt="Jimmy DiResta" />
+            <span class="inspiration-label">Jimmy DiResta</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="jeremy-modal">
+            <img src="jficon.png" alt="Jeremy Fielding" />
+            <span class="inspiration-label">Jeremy Fielding</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="matthias-modal">
+            <img src="mwicon.png" alt="Matthias Wandel" />
+            <span class="inspiration-label">Matthias Wandel</span>
+          </button>
+          <button class="inspiration-card" type="button" data-inspiration-target="design-modal">
+            <img src="dticon.png" alt="Design Theory" />
+            <span class="inspiration-label">Design Theory</span>
+          </button>
         </div>
       </section>
 
@@ -137,7 +157,7 @@
       </div>
     </div>
 
-    <div class="modal" id="marius-modal" aria-hidden="true">
+    <div class="modal inspiration-modal" id="marius-modal" aria-hidden="true">
       <div
         class="modal-content inspiration-modal-content"
         role="dialog"
@@ -146,7 +166,7 @@
       >
         <div class="modal-header">
           <h2 id="marius-title">Marius Hornberger</h2>
-          <button class="modal-close" type="button" id="close-marius-modal">✕</button>
+          <button class="modal-close" type="button" data-inspiration-close="marius-modal">✕</button>
         </div>
         <div class="inspiration-modal-body">
           <img src="mhbanner.png" alt="Marius Hornberger banner" />
@@ -184,7 +204,7 @@
       </div>
     </div>
 
-    <div class="modal" id="laura-modal" aria-hidden="true">
+    <div class="modal inspiration-modal" id="laura-modal" aria-hidden="true">
       <div
         class="modal-content inspiration-modal-content"
         role="dialog"
@@ -193,7 +213,7 @@
       >
         <div class="modal-header">
           <h2 id="laura-title">Laura Kampf</h2>
-          <button class="modal-close" type="button" id="close-laura-modal">✕</button>
+          <button class="modal-close" type="button" data-inspiration-close="laura-modal">✕</button>
         </div>
         <div class="inspiration-modal-body">
           <img src="lkbanner.png" alt="Laura Kampf banner" />
@@ -232,6 +252,345 @@
       </div>
     </div>
 
+    <div class="modal inspiration-modal" id="fireball-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fireball-title"
+      >
+        <div class="modal-header">
+          <h2 id="fireball-title">Fireball Tool</h2>
+          <button class="modal-close" type="button" data-inspiration-close="fireball-modal">✕</button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="fbbanner.png" alt="Fireball Tool banner" />
+          <p>
+            Fireball Tool is a YouTube channel that sits at the rare intersection
+            of industrial-grade metalwork, rigorous design thinking, and clear
+            conceptual storytelling. What makes it inspiring is the way complex
+            fabrication problems are designed before they are built. Ideas begin
+            with careful conceptualisation, move through precise CAD models and
+            animations, and only then arrive at machining, welding, and assembly.
+            The viewer sees not just what is made, but why every decision exists.
+          </p>
+          <p>
+            The blend of clean animations with real-world shop procedures bridges
+            a gap many makers never cross: translating abstract engineering intent
+            into physical steel with repeatability and discipline. Fixtures, tools,
+            and machines are treated as systems, not one-off builds. Processes
+            are documented like industrial workflows, yet remain accessible and
+            deeply satisfying to watch. Fireball Tool demonstrates that creativity
+            and structure are not opposites—when combined, they produce elegant,
+            durable solutions. The inspiration lies in showing that
+            professional-grade thinking can live comfortably in a workshop, one
+            well-considered cut at a time.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/FireballTool"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="inheritance-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inheritance-title"
+      >
+        <div class="modal-header">
+          <h2 id="inheritance-title">Inheritance Machining</h2>
+          <button class="modal-close" type="button" data-inspiration-close="inheritance-modal">
+            ✕
+          </button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="imbanner.png" alt="Inheritance Machining banner" />
+          <p>
+            Inheritance Machining is a YouTube channel devoted to precision
+            machining, problem-solving, and the quiet craft of making parts
+            correctly. What makes it inspiring is its uncompromising focus on
+            fundamentals: material behavior, setup rigidity, tooling choices,
+            tolerances, and process order. There is no rush to spectacle. Instead,
+            the channel rewards attention, patience, and respect for the physics
+            of metal.
+          </p>
+          <p>
+            The work often centers on repairing, reproducing, or improving
+            mechanical components, which gives each project a sense of continuity
+            with real industrial practice rather than one-off novelty builds.
+            Measurement, fixturing, and verification are treated as integral
+            steps, not afterthoughts. Mistakes are acknowledged plainly and
+            resolved through reasoning, not guesswork. Inheritance Machining is
+            inspiring because it reframes machining as disciplined thinking made
+            tangible—where accuracy is earned, craftsmanship is cumulative, and
+            mastery grows quietly through repetition, care, and understanding.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/@InheritanceMachining"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="stuffmadehere-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="stuffmadehere-title"
+      >
+        <div class="modal-header">
+          <h2 id="stuffmadehere-title">Stuff Made Here</h2>
+          <button class="modal-close" type="button" data-inspiration-close="stuffmadehere-modal">
+            ✕
+          </button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="smhbanner.png" alt="Stuff Made Here banner" />
+          <p>
+            Stuff Made Here is a YouTube channel created by engineer Shane Wighton
+            that showcases what happens when deep analytical thinking meets
+            playful curiosity. The channel is inspiring because it treats
+            absurdly ambitious ideas—self-aiming basketball hoops, robotic
+            scissors, impossible mechanisms—not as jokes, but as serious
+            engineering problems worth solving properly. Each project begins with
+            clear problem definition, followed by simulation, math, prototyping,
+            failure, and refinement.
+          </p>
+          <p>
+            What sets Stuff Made Here apart is its fearless embrace of complexity.
+            Advanced concepts like control systems, kinematics, and tolerance
+            stack-ups are made visible and intuitive through testing and
+            explanation, not hand-waving. Failures are frequent and instructive,
+            reinforcing that engineering progress is iterative by nature. The
+            result is a rare blend of rigor and wonder: proof that disciplined
+            engineering can still be joyful, strange, and imaginative. Stuff Made
+            Here inspires viewers to think bigger, test harder, and treat
+            curiosity as something to engineer—not suppress.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/c/StuffMadeHere"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="jimmy-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="jimmy-title"
+      >
+        <div class="modal-header">
+          <h2 id="jimmy-title">Jimmy DiResta</h2>
+          <button class="modal-close" type="button" data-inspiration-close="jimmy-modal">✕</button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="jdbanner.png" alt="Jimmy DiResta banner" />
+          <p>
+            Jimmy DiResta is an American maker, designer, and fabricator whose
+            work embodies the raw joy of making things with your hands. He moves
+            effortlessly between metal, wood, leather, and concrete, often within
+            the same project, guided more by intuition and experience than rigid
+            planning. That instinctive fluency is what makes him so compelling to
+            watch.
+          </p>
+          <p>
+            Jimmy’s inspiration comes from momentum. He works fast, trusts his
+            hands, and embraces imperfection as part of the creative process.
+            Sketches are loose, ideas evolve mid-build, and tools are treated as
+            extensions of thought rather than precious artifacts. His background
+            as a professional fabricator gives his work authenticity—objects feel
+            used, lived-in, and honest. He also champions the maker community,
+            collaboration, and tool literacy with infectious enthusiasm. Jimmy
+            DiResta inspires people to stop overthinking, start cutting, and
+            remember that creativity thrives when craftsmanship, confidence, and
+            curiosity are allowed to collide in the workshop.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/user/jimmydiresta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="jeremy-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="jeremy-title"
+      >
+        <div class="modal-header">
+          <h2 id="jeremy-title">Jeremy Fielding</h2>
+          <button class="modal-close" type="button" data-inspiration-close="jeremy-modal">
+            ✕
+          </button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="jfbanner.png" alt="Jeremy Fielding banner" />
+          <p>
+            Jeremy Fielding is an engineer and educator whose YouTube channel
+            turns curiosity into disciplined experimentation. What makes his work
+            inspiring is the way he approaches ideas like a scientist with a
+            workshop: questions first, hypotheses second, testing always. Projects
+            often begin with a simple “what if,” then unfold through measurement,
+            iteration, and sometimes spectacular failure—treated not as
+            embarrassment, but as data.
+          </p>
+          <p>
+            Jeremy blends mechanical design, electronics, and physics with a
+            teacher’s instinct for clarity. He explains why something works (or
+            doesn’t) without diluting the complexity, making advanced engineering
+            feel approachable rather than mystical. Prototypes are built to be
+            tested, broken, and improved, not admired from a distance. There’s an
+            infectious honesty in watching real constraints—materials,
+            tolerances, power limits—shape outcomes in real time. Jeremy Fielding
+            is inspiring because he models engineering as a way of thinking:
+            curious, rigorous, playful, and grounded in reality, where
+            understanding grows by doing and testing beats guessing every time.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/@Jeremy_Fielding"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="matthias-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="matthias-title"
+      >
+        <div class="modal-header">
+          <h2 id="matthias-title">Matthias Wandel</h2>
+          <button class="modal-close" type="button" data-inspiration-close="matthias-modal">
+            ✕
+          </button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="mwbanner.png" alt="Matthias Wandel banner" />
+          <p>
+            Matthias Wandel is a Canadian engineer and woodworker best known for
+            building remarkably sophisticated machines—gearboxes, jointers,
+            sawmills—largely out of plywood. What makes him inspiring is his
+            radical commitment to understanding before elegance. Designs are
+            driven by first principles, careful reasoning, and relentless
+            curiosity rather than aesthetics or convention.
+          </p>
+          <p>
+            Matthias approaches problems like a mechanical naturalist, patiently
+            observing forces, motion, and failure modes, then iterating until the
+            system behaves. His explanations are disarmingly clear, often
+            revealing that complex machinery is just simple ideas stacked
+            thoughtfully. There’s no mystique around tools or materials; plywood,
+            screws, and glue become vehicles for insight rather than limitations.
+            Mistakes are shown plainly and corrected methodically, reinforcing
+            engineering as a learnable craft rather than a talent lottery.
+            Matthias Wandel inspires by proving that deep mechanical intelligence,
+            patience, and clarity of thought can turn humble materials into
+            powerful machines—and curiosity into competence.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/user/Matthiaswandel"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal inspiration-modal" id="design-modal" aria-hidden="true">
+      <div
+        class="modal-content inspiration-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="design-title"
+      >
+        <div class="modal-header">
+          <h2 id="design-title">Design Theory</h2>
+          <button class="modal-close" type="button" data-inspiration-close="design-modal">
+            ✕
+          </button>
+        </div>
+        <div class="inspiration-modal-body">
+          <img src="dtbanner.png" alt="Design Theory banner" />
+          <p>
+            Design Theory is a YouTube channel that dissects objects, systems, and
+            products to uncover the thinking hidden beneath their surfaces. What
+            makes it inspiring is its refusal to treat design as decoration.
+            Instead, it frames design as structured decision-making under
+            constraint—where materials, manufacturing methods, ergonomics, cost,
+            and human behavior collide.
+          </p>
+          <p>
+            The channel excels at slowing things down. Everyday objects are
+            analyzed with engineer-like rigor, revealing trade-offs, compromises,
+            and quiet brilliance that usually go unnoticed. Visual explanations,
+            sketches, and clear narration turn abstract ideas—like affordances,
+            tolerance stack-ups, and usability—into tangible insights. It rewards
+            careful attention rather than spectacle.
+          </p>
+          <p>
+            Design Theory is inspiring because it trains viewers to see: to
+            recognize that good design is rarely accidental and bad design is
+            rarely random. It encourages critical thinking over admiration,
+            showing that understanding design is not about taste, but about
+            reasoning, intent, and consequences.
+          </p>
+          <a
+            class="btn primary icon-button"
+            href="https://www.youtube.com/@Design.Theory"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="Youtube.png" alt="YouTube" />
+            Visit YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
     <script>
       const modal = document.getElementById("talk-modal");
       const closeButton = document.getElementById("close-talk-modal");
@@ -239,12 +598,9 @@
       const navOverlay = document.getElementById("nav-overlay");
       const navLinks = document.querySelectorAll(".nav-links a");
       const footerButton = document.getElementById("open-talk-modal-footer");
-      const mariusModal = document.getElementById("marius-modal");
-      const lauraModal = document.getElementById("laura-modal");
-      const openMariusButton = document.getElementById("open-marius-modal");
-      const openLauraButton = document.getElementById("open-laura-modal");
-      const closeMariusButton = document.getElementById("close-marius-modal");
-      const closeLauraButton = document.getElementById("close-laura-modal");
+      const inspirationButtons = document.querySelectorAll("[data-inspiration-target]");
+      const inspirationModals = document.querySelectorAll(".inspiration-modal");
+      const inspirationCloseButtons = document.querySelectorAll("[data-inspiration-close]");
       const contactLinks = document.querySelectorAll(".contact-link");
 
       const openModal = () => {
@@ -259,34 +615,38 @@
 
       footerButton.addEventListener("click", openModal);
       closeButton.addEventListener("click", closeModal);
-      openMariusButton.addEventListener("click", () => {
-        mariusModal.classList.add("is-open");
-        mariusModal.setAttribute("aria-hidden", "false");
-      });
-      closeMariusButton.addEventListener("click", () => {
-        mariusModal.classList.remove("is-open");
-        mariusModal.setAttribute("aria-hidden", "true");
-      });
-      mariusModal.addEventListener("click", (event) => {
-        if (event.target === mariusModal) {
-          mariusModal.classList.remove("is-open");
-          mariusModal.setAttribute("aria-hidden", "true");
-        }
+      const openInspirationModal = (id) => {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      };
+
+      const closeInspirationModal = (id) => {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      };
+
+      inspirationButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          openInspirationModal(button.dataset.inspirationTarget);
+        });
       });
 
-      openLauraButton.addEventListener("click", () => {
-        lauraModal.classList.add("is-open");
-        lauraModal.setAttribute("aria-hidden", "false");
+      inspirationCloseButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          closeInspirationModal(button.dataset.inspirationClose);
+        });
       });
-      closeLauraButton.addEventListener("click", () => {
-        lauraModal.classList.remove("is-open");
-        lauraModal.setAttribute("aria-hidden", "true");
-      });
-      lauraModal.addEventListener("click", (event) => {
-        if (event.target === lauraModal) {
-          lauraModal.classList.remove("is-open");
-          lauraModal.setAttribute("aria-hidden", "true");
-        }
+
+      inspirationModals.forEach((modal) => {
+        modal.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            closeInspirationModal(modal.id);
+          }
+        });
       });
       contactLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
