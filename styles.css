@@ -303,28 +303,6 @@ main {
   width: min(100%, 1080px);
 }
 
-.pinterest-section {
-  padding-top: 24px;
-}
-
-.pinterest-frame {
-  width: min(100%, 1080px);
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pinterest-frame a {
-  color: var(--text);
-  font-weight: 500;
-  text-decoration: underline;
-}
 
 .password-error {
   color: #b42318;
