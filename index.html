@@ -70,15 +70,15 @@
 
       <section id="work" class="section work">
         <div class="work-grid">
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
-          <div class="work-tile"></div>
+          <button class="work-tile password-tile" type="button" data-target="work-1.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-2.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-3.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-4.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-5.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-6.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-7.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-8.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-9.html"></button>
         </div>
       </section>
 
@@ -210,6 +210,17 @@
             navOverlay.classList.remove("is-active");
             navOverlay.setAttribute("aria-hidden", "true");
           }, 500);
+        });
+      });
+
+      document.querySelectorAll(".password-tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+          const password = prompt("Enter password to continue:");
+          if (password === "Scheurmann") {
+            window.location.href = tile.dataset.target;
+          } else if (password !== null) {
+            alert("Incorrect password.");
+          }
         });
       });
 

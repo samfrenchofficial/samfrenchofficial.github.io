@@ -202,6 +202,11 @@ main {
   background: #e6e6e6;
 }
 
+.password-tile {
+  cursor: pointer;
+  padding: 0;
+}
+
 .work-tile:nth-child(3n) {
   background: #d8d8d8;
 }
@@ -296,6 +301,27 @@ main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: 1fr;
   width: min(100%, 1080px);
+}
+
+.pinterest-section {
+  padding-top: 24px;
+}
+
+.pinterest-frame {
+  width: min(100%, 1080px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.pinterest-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .footer-section {
