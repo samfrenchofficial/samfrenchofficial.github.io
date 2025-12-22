@@ -716,6 +716,10 @@
       const openModal = () => {
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
+        const content = modal.querySelector(".modal-content");
+        if (content) {
+          content.scrollTop = 0;
+        }
       };
 
       const closeModal = () => {
@@ -730,6 +734,10 @@
         if (!modal) return;
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
+        const content = modal.querySelector(".modal-content");
+        if (content) {
+          content.scrollTop = 0;
+        }
       };
 
       const closeInspirationModal = (id) => {
