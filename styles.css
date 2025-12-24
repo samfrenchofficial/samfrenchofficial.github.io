@@ -310,6 +310,12 @@ main {
   min-height: 1.2rem;
 }
 
+.pdf-modal-content {
+  width: min(900px, 95vw);
+  max-height: min(95vh, 900px);
+  padding: 24px;
+}
+
 .pdf-viewer {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -317,6 +323,8 @@ main {
   border-radius: 18px;
   overflow: hidden;
   background: #ffffff;
+  padding: 0;
+  cursor: zoom-in;
 }
 
 .pdf-viewer iframe {
@@ -324,6 +332,18 @@ main {
   height: 100%;
   border: none;
   display: block;
+  pointer-events: none;
+}
+
+#pdf-modal .modal-header {
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+#pdf-modal.pdf-zoomed .pdf-viewer {
+  aspect-ratio: 3 / 4.5;
+  cursor: zoom-out;
+}
 }
 
 .footer-section {
