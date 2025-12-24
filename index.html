@@ -70,7 +70,7 @@
 
       <section id="work" class="section work">
         <div class="work-grid">
-          <button class="work-tile password-tile" type="button" data-target="work-1.html"></button>
+          <button class="work-tile password-tile" type="button" data-target="work-1.html" data-modal-target="pdf-modal"></button>
           <button class="work-tile password-tile" type="button" data-target="work-2.html"></button>
           <button class="work-tile password-tile" type="button" data-target="work-3.html"></button>
           <button class="work-tile password-tile" type="button" data-target="work-4.html"></button>
@@ -168,6 +168,18 @@
       </div>
     </div>
 
+    <div class="modal" id="pdf-modal" aria-hidden="true">
+      <div class="modal-content inspiration-modal-content" role="dialog" aria-modal="true" aria-labelledby="pdf-title">
+        <div class="modal-header">
+          <h2 id="pdf-title">Aix_D</h2>
+          <button class="modal-close" type="button" id="close-pdf-modal">✕</button>
+        </div>
+        <div class="pdf-viewer">
+          <iframe title="Aix_D PDF" src="Aix_D.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+
     <script>
       const modal = document.getElementById("talk-modal");
       const openButton = document.getElementById("open-talk-modal");
@@ -182,7 +194,10 @@
       const passwordInput = document.getElementById("password-input");
       const passwordError = document.getElementById("password-error");
       const closePasswordButton = document.getElementById("close-password-modal");
+      const pdfModal = document.getElementById("pdf-modal");
+      const closePdfButton = document.getElementById("close-pdf-modal");
       let pendingTarget = "";
+      let pendingModal = "";
 
       const openModal = () => {
         modal.classList.add("is-open");
@@ -240,8 +255,9 @@
         });
       });
 
-      const openPasswordModal = (target) => {
+      const openPasswordModal = (target, modalTarget) => {
         pendingTarget = target;
+        pendingModal = modalTarget || "";
         passwordModal.classList.add("is-open");
         passwordModal.setAttribute("aria-hidden", "false");
         passwordError.textContent = "";
@@ -257,11 +273,12 @@
         passwordModal.classList.remove("is-open");
         passwordModal.setAttribute("aria-hidden", "true");
         pendingTarget = "";
+        pendingModal = "";
       };
 
       document.querySelectorAll(".password-tile").forEach((tile) => {
         tile.addEventListener("click", () => {
-          openPasswordModal(tile.dataset.target);
+          openPasswordModal(tile.dataset.target, tile.dataset.modalTarget);
         });
       });
 
@@ -275,10 +292,32 @@
       passwordForm.addEventListener("submit", (event) => {
         event.preventDefault();
         if (passwordInput.value === "Scheurmann") {
-          window.location.href = pendingTarget;
+          if (pendingModal === "pdf-modal") {
+            pdfModal.classList.add("is-open");
+            pdfModal.setAttribute("aria-hidden", "false");
+            const content = pdfModal.querySelector(".modal-content");
+            if (content) {
+              content.scrollTop = 0;
+            }
+          } else {
+            window.location.href = pendingTarget;
+          }
+          closePasswordModal();
         } else {
           passwordError.textContent = "Incorrect password. Please try again.";
           passwordInput.focus();
+        }
+      });
+
+      const closePdfModal = () => {
+        pdfModal.classList.remove("is-open");
+        pdfModal.setAttribute("aria-hidden", "true");
+      };
+
+      closePdfButton.addEventListener("click", closePdfModal);
+      pdfModal.addEventListener("click", (event) => {
+        if (event.target === pdfModal) {
+          closePdfModal();
         }
       });
 
