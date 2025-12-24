@@ -17,7 +17,7 @@
     <header class="site-header">
       <nav class="nav">
         <a class="logo" href="#">
-          <img src="signature.png" alt="Sam French signature" />
+          <img src="Home/signature.png" alt="Sam French signature" />
         </a>
         <div class="nav-links">
           <a href="about.html">About</a>
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="hero-panel">
-          <img class="hero-portrait" src="portrait.png" alt="Portrait" />
+          <img class="hero-portrait" src="Home/portrait.png" alt="Portrait" />
         </div>
       </section>
 
@@ -169,17 +169,27 @@
     </div>
 
     <div class="modal" id="pdf-modal" aria-hidden="true">
-      <div class="modal-content pdf-modal-content" role="dialog" aria-modal="true" aria-labelledby="pdf-title">
+      <div class="modal-content pdf-modal-content" role="dialog" aria-modal="true">
         <div class="modal-header">
           <button class="modal-close" type="button" id="close-pdf-modal">✕</button>
         </div>
-        <button class="pdf-viewer" type="button" id="toggle-pdf-view">
-          <iframe
-            title="Aix_D PDF"
-            src="Aix_D.pdf#toolbar=0&navpanes=0&scrollbar=0"
-            loading="lazy"
-          ></iframe>
-        </button>
+        <div class="pdf-gallery">
+          <button class="pdf-image" type="button">
+            <img src="Home/Axis_D1.png" alt="Axis D page 1" />
+          </button>
+          <button class="pdf-image" type="button">
+            <img src="Home/Axis_D2.png" alt="Axis D page 2" />
+          </button>
+          <button class="pdf-image" type="button">
+            <img src="Home/Axis_D3.png" alt="Axis D page 3" />
+          </button>
+          <button class="pdf-image" type="button">
+            <img src="Home/Axis_D4.png" alt="Axis D page 4" />
+          </button>
+          <button class="pdf-image" type="button">
+            <img src="Home/Axis_D5.png" alt="Axis D page 5" />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -198,8 +208,8 @@
       const passwordError = document.getElementById("password-error");
       const closePasswordButton = document.getElementById("close-password-modal");
       const pdfModal = document.getElementById("pdf-modal");
-      const pdfViewToggle = document.getElementById("toggle-pdf-view");
       const closePdfButton = document.getElementById("close-pdf-modal");
+      const pdfImages = document.querySelectorAll(".pdf-image");
       let pendingTarget = "";
       let pendingModal = "";
 
@@ -319,8 +329,10 @@
       };
 
       closePdfButton.addEventListener("click", closePdfModal);
-      pdfViewToggle.addEventListener("click", () => {
-        pdfModal.classList.toggle("pdf-zoomed");
+      pdfImages.forEach((imageButton) => {
+        imageButton.addEventListener("click", () => {
+          imageButton.classList.toggle("is-zoomed");
+        });
       });
       pdfModal.addEventListener("click", (event) => {
         if (event.target === pdfModal) {
